@@ -25,3 +25,8 @@ def deactivate_expired_users():
 @shared_task
 def delete_old_users(older_than_months=12):
     management.call_command('delete_old_users', older_than_months=older_than_months)
+
+
+@shared_task
+def convert_called_station_id():
+    management.call_command('convert_called_station_id')
